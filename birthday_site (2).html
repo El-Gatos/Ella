@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to Us 🎀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink-50: #fff1fb;
+            --pink-100: #ffe2f3;
+            --pink-200: #ffc9e8;
+            --pink-300: #ff9ad2;
+            --pink-400: #ff6bb8;
+            --pink-500: #ff4aa5;
+            --pink-600: #f4228f;
+            --pink-700: #c71d72;
+            --rose: #ff5fa2;
+            --lavender: #f3d9ff;
+            --peach: #ffe5d8;
+            --cream: #fffafc;
+            --text: #6b1b43;
+            --muted: #8b4b6d;
+            --shadow: rgba(255, 90, 170, 0.18);
+        }
+
+        body {
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            background:
+                radial-gradient(circle at top left, #fff7ff 0%, transparent 25%),
+                radial-gradient(circle at bottom right, #ffe5f4 0%, transparent 30%),
+                linear-gradient(135deg, #ffe7f5 0%, #fff9fc 40%, #fff1fb 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            position: relative;
+            color: var(--text);
+        }
+
+        body::before,
+        body::after {
+            content: '🐾';
+            position: fixed;
+            font-size: 48px;
+            opacity: 0.18;
+            pointer-events: none;
+            animation: float 9s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 90, 170, 0.2));
+        }
+
+        body::before {
+            top: 6%;
+            right: 8%;
+            animation-delay: 0s;
+        }
+
+        body::after {
+            bottom: 8%;
+            left: 7%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(-8deg);
+            }
+            50% {
+                transform: translateY(-24px) rotate(8deg);
+            }
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 35px 25px 30px;
+            background: linear-gradient(180deg, #fffdfd 0%, #fff1f8 100%);
+            border-radius: 28px;
+            box-shadow: 0 10px 26px var(--shadow);
+            border: 3px dashed #f9b5d4;
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        header::before {
+            content: '✨';
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 38px;
+        }
+
+        h1 {
+            font-family: 'Pacifico', 'Fredoka', cursive;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            color: var(--pink-600);
+            margin-bottom: 10px;
+            line-height: 1.1;
+            letter-spacing: 1px;
+            text-shadow: 0 3px 0 rgba(255,255,255,0.6);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--pink-500);
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-family: 'Fredoka', 'Quicksand', sans-serif;
+        }
+
+        .emoji {
+            font-size: 32px;
+            margin: 18px 0 8px;
+            letter-spacing: 10px;
+        }
+
+        .mini-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .day-counter {
+            background: linear-gradient(135deg, #fff4fa 0%, #ffe4f3 100%);
+            border: 2px solid #ffb3d9;
+            border-radius: 18px;
+            padding: 12px 18px;
+            box-shadow: 0 8px 20px rgba(255, 90, 170, 0.12);
+            min-width: 170px;
+        }
+
+        .counter-label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--pink-600);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .day-counter strong {
+            font-family: 'Fredoka', 'Quicksand', sans-serif;
+            font-size: 2rem;
+            color: var(--pink-600);
+            line-height: 1;
+        }
+
+        .section {
+            background: linear-gradient(180deg, #fffdfd 0%, #fff6fb 100%);
+            border-radius: 22px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 22px var(--shadow);
+            border: 2px solid #ffc9e5;
+            position: relative;
+            transform: rotate(0.5deg);
+        }
+
+        .section:nth-child(even) {
+            transform: rotate(-0.8deg);
+        }
+
+        .section::before {
+            content: '💖';
+            position: absolute;
+            top: -16px;
+            left: 24px;
+            font-size: 28px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--pink-600);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            text-transform: lowercase;
+            font-family: 'Pacifico', 'Fredoka', cursive;
+            letter-spacing: 0.5px;
+        }
+
+        .message-box {
+            background: #fff5fb;
+            padding: 25px;
+            border-radius: 16px;
+            border: 2px solid #ffb3d9;
+            line-height: 1.8;
+            font-size: 16px;
+            color: #6b0e3b;
+            font-style: italic;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .message-box::before {
+            content: '💕';
+            font-size: 32px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .spotify-embed {
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .photo-placeholder {
+            background: white;
+            aspect-ratio: 1;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed #ffb3d9;
+            color: #ff1493;
+            font-size: 42px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            transform: rotate(var(--rotation));
+        }
+
+        .photo-placeholder:nth-child(1) { --rotation: -2deg; }
+        .photo-placeholder:nth-child(2) { --rotation: 1.5deg; }
+        .photo-placeholder:nth-child(3) { --rotation: -1deg; }
+        .photo-placeholder:nth-child(4) { --rotation: 2deg; }
+        .photo-placeholder:nth-child(5) { --rotation: -1.5deg; }
+        .photo-placeholder:nth-child(6) { --rotation: 1deg; }
+
+        .photo-placeholder:hover {
+            background: #fff5fb;
+            transform: scale(1.08) rotate(0deg);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.15);
+        }
+
+        .photo-placeholder.filled {
+            border: 3px solid #ffb3d9;
+            background: none;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(255, 20, 147, 0.12);
+        }
+
+        .photo-placeholder.filled img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .reasons-list {
+            list-style: none;
+        }
+
+        .reason-item {
+            padding: 16px;
+            margin-bottom: 12px;
+            background: white;
+            border-radius: 14px;
+            border: 2px solid #ffb3d9;
+            line-height: 1.7;
+            font-size: 15px;
+            color: #6b0e3b;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            transform: rotate(var(--tilt));
+        }
+
+        .reason-item:nth-child(odd) { --tilt: -0.3deg; }
+        .reason-item:nth-child(even) { --tilt: 0.4deg; }
+
+        .reason-item:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 6px 18px rgba(255, 20, 147, 0.15);
+        }
+
+        .reason-item strong {
+            color: #ff1493;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: white;
+            color: #ff1493;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 18px;
+            border: 2px dashed #ffb3d9;
+            transform: rotate(-0.5deg);
+        }
+
+        .heart {
+            color: #ff1493;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffb3d9, transparent);
+            margin: 30px 0;
+        }
+
+        .cute-text {
+            color: #ff1493;
+            font-weight: 600;
+        }
+
+        .bucket-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bucket-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: white;
+            border: 2px solid #ffb3d9;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            transform: rotate(var(--item-tilt));
+        }
+
+        .bucket-item:nth-child(odd) { --item-tilt: -0.2deg; }
+        .bucket-item:nth-child(even) { --item-tilt: 0.3deg; }
+
+        .bucket-item:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 6px 18px rgba(255, 20, 147, 0.15);
+        }
+
+        .bucket-emoji {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .bucket-text {
+            font-size: 15px;
+            color: #6b0e3b;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 30;
+            animation: float-up 2.2s ease-out forwards;
+            text-shadow: 0 0 12px rgba(255, 90, 170, 0.35);
+            user-select: none;
+        }
+
+        @keyframes float-up {
+            0% {
+                opacity: 0;
+                transform: translate3d(0, 0, 0) scale(0.8) rotate(0deg);
+            }
+            15% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate3d(var(--drift-x, 0px), -80px, 0) scale(1.3) rotate(18deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Happy Birthday To Us 🎀</h1>
+            <div class="subtitle">
+                [J] 💕 [E]
+            </div>
+            <div class="emoji">🎀 ✨ 💖 ✨ 🎀</div>
+            <p style="color: #ff1493; margin-top: 20px; font-size: 16px; font-weight: 600;">
+                same birthday, different year, forever yours <3
+            </p>
+
+            <div class="mini-stats">
+                <div class="day-counter" aria-live="polite">
+                    <span class="counter-label">days together</span>
+                    <strong id="daysTogether">1</strong>
+                </div>
+            </div>
+        </header>
+
+        <!-- MESSAGE SECTION -->
+        <div class="section">
+            <h2>💌 a letter to my favorite person</h2>
+            <div class="message-box">
+                Ella Nutella, you're my favorite girl in the whole wide world and I'm eternally lucky to have a woman like you, you make my days feel bright and bring me up when i'm down. Baby I promise you that everyday i will put my best foot forward so that we can work bc theres nothing more that i want than that. day by day you put a smile on my face and make me feel what it's like to be truly loved and i'm eternally grateful. Here's to our bday and our offical 1 day together. I love you so much my beautiful wife. Mwah. 8/18 :)
+            </div>
+        </div>
+
+        <!-- BUCKET LIST -->
+        <div class="section">
+            <h2>✨ things we NEED to do</h2>
+            <p style="color: #ff1493; margin-bottom: 20px; font-size: 16px; font-weight: 600;">
+                our future together and more.
+            </p>
+            <div class="bucket-list">
+                <div class="bucket-item">
+                    <span class="bucket-emoji">🌍</span>
+                    <span class="bucket-text">A trip out of country for both of us</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">🎤</span>
+                    <span class="bucket-text">Go to a Madison Beer Concert Together (i'm listening to her for you :D)</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">🌅</span>
+                    <span class="bucket-text">Watch the sunrise/sunset together in person</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">🍽️</span>
+                    <span class="bucket-text">cook a meal together (or try to lol we MIGHT be cooked)</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">🎬</span>
+                    <span class="bucket-text">watch a movie and fall asleep in my arms</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">📸</span>
+                    <span class="bucket-text">Take a million photos together bc everytime i leave ima need to remember so i dont cry as hard</span>
+                </div>
+                <div class="bucket-item">
+                    <span class="bucket-emoji">❤️</span>
+                    <span class="bucket-text">Build a whole life with you</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHOTO GALLERY -->
+        <div class="section">
+            <h2>📸 pics i'm obsessed with</h2>
+            <p style="color: #ff1493; margin-bottom: 20px; font-size: 16px; font-weight: 600;">
+                seeing your gorgeous face makes me blush
+            </p>
+            <div class="photo-gallery">
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo1.jpeg" alt="Photo 1">
+                </div>
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo2.jpeg" alt="Photo 2">
+                </div>
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo3.jpeg" alt="Photo 3">
+                </div>
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo4.jpeg" alt="Photo 4">
+                </div>
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo5.jpeg" alt="Photo 5">
+                </div>
+                <div class="photo-placeholder filled">
+                    <img src="./images/photo6.jpeg" alt="Photo 6">
+                </div>
+            </div>
+            <p style="color: #ff1493; font-size: 14px; margin-top: 20px; font-style: italic; font-weight: 500;">
+            </p>
+        </div>
+
+        <!-- REASONS LIST -->
+        <div class="section">
+            <h2>💖 why i love u</h2>
+            <p style="color: #ff1493; margin-bottom: 20px; font-size: 16px; font-weight: 600;">
+                aka why you got me down bad (these are just the first 10)
+            </p>
+            <ul class="reasons-list">
+                <li class="reason-item"><strong>1.</strong> Reason #1 - You're always smiling and your smile brightens my day. </li>
+                <li class="reason-item"><strong>2.</strong> Reason #2 - You're so understanding and listening and patient with me.</li>
+                <li class="reason-item"><strong>3.</strong> Reason #3 - You haven't ate shit in the shower yet. :p </li>
+                <li class="reason-item"><strong>4.</strong> Reason #4 - You make me laugh even when I don't want to. </li>
+                <li class="reason-item"><strong>5.</strong> Reason #5 - You always know exactly what to say to make me feel better. </li>
+                <li class="reason-item"><strong>6.</strong> Reason #6 - You're the most beautiful person I've ever met. </li>
+                <li class="reason-item"><strong>7.</strong> Reason #7 - You have the most beautiful soul. </li>
+                <li class="reason-item"><strong>8.</strong> Reason #8 - You're the most caring person I know. </li>
+                <li class="reason-item"><strong>9.</strong> Reason #9 - You make even the worst days better. </li>
+                <li class="reason-item"><strong>10.</strong> Reason #10 - You're my wife. </li>
+            </ul>
+        </div>
+
+        <!-- CLOSING MESSAGE -->
+        <div class="section">
+            <h2>💕 we got this my love</h2>
+            <div class="message-box">
+                I know we're long distance and it's our official day 1 and it's going to be hard. I promise you we're going to make it. I've never been more sure about someone in my entire life. 
+                <br><br>
+                Happy birthday to the most amazing person in my life. I can't wait until we're not counting down days anymore. 
+                <br><br>
+                All my love,<br>
+                Jacob
+                <span class="heart">💕</span>
+            </div>
+        </div>
+
+        <footer>
+            Made with all my love 🎀<br>
+            On the best day of the year (our day)
+        </footer>
+    </div>
+        <script>
+        const startTogetherDate = new Date('2026-08-18T00:00:00');
+        const baseDaysTogether = 7;
+        const daysTogetherEl = document.getElementById('daysTogether');
+
+        function getDaysTogether() {
+            const diffMs = Date.now() - startTogetherDate.getTime();
+            const elapsedDays = Math.floor(diffMs / 86400000);
+            return baseDaysTogether + elapsedDays;
+        }
+
+        function updateDaysTogether() {
+            if (daysTogetherEl) {
+                daysTogetherEl.textContent = getDaysTogether();
+            }
+        }
+
+        updateDaysTogether();
+        setInterval(updateDaysTogether, 60000);
+
+        function spawnHeartBurst(x, y) {
+            const heartSymbols = ['💖', '💕', '💗', '💞'];
+            const burstCount = 10;
+
+            for (let i = 0; i < burstCount; i++) {
+                const heart = document.createElement('span');
+                heart.className = 'floating-heart';
+                heart.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                const driftX = (Math.random() - 0.5) * 120;
+                heart.style.left = `${x + (Math.random() - 0.5) * 30}px`;
+                heart.style.top = `${y + (Math.random() - 0.5) * 30}px`;
+                heart.style.setProperty('--drift-x', `${driftX}px`);
+                heart.style.animationDelay = `${(Math.random() * 0.2).toFixed(2)}s`;
+                heart.style.fontSize = `${18 + Math.random() * 18}px`;
+                document.body.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 2200);
+            }
+        }
+
+        document.addEventListener('click', () => {
+            const x = window.innerWidth / 2;
+            const y = window.innerHeight / 2;
+            spawnHeartBurst(x, y);
+        });
+
+        document.querySelectorAll('.photo-placeholder').forEach((el, index) => {
+            el.addEventListener('click', () => {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = () => {
+                    const file = input.files && input.files[0];
+                    if (!file) return;
+                    const img = document.createElement('img');
+                    img.alt = `Photo ${index + 1}`;
+                    img.src = URL.createObjectURL(file);
+                    el.classList.add('filled');
+                    el.innerHTML = '';
+                    el.appendChild(img);
+                    img.onload = () => URL.revokeObjectURL(img.src);
+                };
+                input.click();
+            });
+        });
+        </script>
+        </body>
+</html>
