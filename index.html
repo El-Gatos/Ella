@@ -561,13 +561,12 @@
     </div>
         <script>
         const startTogetherDate = new Date('2026-08-18T00:00:00');
-        const baseDaysTogether = 7;
         const daysTogetherEl = document.getElementById('daysTogether');
 
         function getDaysTogether() {
             const diffMs = Date.now() - startTogetherDate.getTime();
             const elapsedDays = Math.floor(diffMs / 86400000);
-            return baseDaysTogether + elapsedDays;
+            return 1 + elapsedDays; // Day 1 starts on August 18th
         }
 
         function updateDaysTogether() {
@@ -577,7 +576,7 @@
         }
 
         updateDaysTogether();
-        setInterval(updateDaysTogether, 60000);
+        setInterval(updateDaysTogether, 1000); // Update every second for real-time feel
 
         function spawnHeartBurst(x, y) {
             const heartSymbols = ['💖', '💕', '💗', '💞'];
